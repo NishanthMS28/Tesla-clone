@@ -1,0 +1,82 @@
+.Container {
+  min-height: 60px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.Menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    padding: 0 10px;
+    flex-wrap: nowrap;
+  }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+.RightMenu {
+  display: flex;
+  align-items: center;
+  a {
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-right: 10px;
+  }
+}
+
+.CustomMenu {
+  cursor: pointer;
+}
+
+.BurgerNav {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  background-color: white;
+  width: 300px;
+  z-index: 10;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+
+  transform: translateX(100%); /* Start offscreen to the right */
+  transition: transform 0.2s ease-in-out;
+
+  &.open {
+    transform: translateX(0); /* Slide in from the right */
+  }
+
+  li {
+    list-style: none;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+    a {
+      text-decoration: none;
+      font-weight: 600;
+    }
+  }
+}
+
+.CustomClose {
+  display: flex;
+  justify-content: flex-end;
+  cursor: pointer;
+}
